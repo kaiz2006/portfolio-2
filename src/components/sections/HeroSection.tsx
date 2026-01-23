@@ -9,7 +9,7 @@ export const HeroSection = () => {
       {/* Animated Background Blobs */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-primary/20 blur-[80px]"
+          className="absolute -top-20 sm:-top-40 -left-20 sm:-left-40 w-48 h-48 sm:w-96 sm:h-96 rounded-full bg-primary/20 blur-[80px]"
           animate={{
             x: [0, 50, 0],
             y: [0, 30, 0],
@@ -22,7 +22,7 @@ export const HeroSection = () => {
           }}
         />
         <motion.div
-          className="absolute top-1/3 -right-40 w-80 h-80 rounded-full bg-secondary/20 blur-[80px]"
+          className="absolute top-1/3 -right-20 sm:-right-40 w-40 h-40 sm:w-80 sm:h-80 rounded-full bg-secondary/20 blur-[80px]"
           animate={{
             x: [0, -30, 0],
             y: [0, 50, 0],
@@ -36,7 +36,7 @@ export const HeroSection = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-20 left-1/3 w-72 h-72 rounded-full bg-accent/15 blur-[80px]"
+          className="absolute bottom-20 left-1/3 w-36 h-36 sm:w-72 sm:h-72 rounded-full bg-accent/15 blur-[80px]"
           animate={{
             x: [0, 40, 0],
             y: [0, -30, 0],
@@ -51,40 +51,42 @@ export const HeroSection = () => {
         />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Role Tag */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full mb-8"
+            className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 glass rounded-full mb-8 max-w-full"
           >
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm text-muted-foreground">Electronics & VLSI Student | Full-Stack Developer</span>
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse flex-shrink-0" />
+            <span className="text-xs sm:text-sm text-muted-foreground text-center">Electronics & VLSI Student | Full-Stack Developer</span>
           </motion.div>
 
           {/* Animated Name */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6 overflow-hidden whitespace-nowrap">
-            {nameText.split("").map((char, index) => (
-              <motion.span
-                key={index}
-                initial={{ y: 100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.3 + index * 0.03,
-                  ease: [0.25, 0.1, 0.25, 1],
-                }}
-                className={`inline-block ${char === " " ? "w-3 md:w-4" : ""} ${
-                  index >= nameText.indexOf("Kumar") && index < nameText.indexOf("Kumar") + 5
-                    ? "gradient-text"
-                    : ""
-                }`}
-              >
-                {char}
-              </motion.span>
-            ))}
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6 overflow-hidden">
+            <div className="flex flex-wrap justify-center gap-x-1 md:gap-x-2">
+              {nameText.split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.3 + index * 0.03,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
+                  className={`inline-block ${char === " " ? "w-2 sm:w-3 md:w-4" : ""} ${
+                    index >= nameText.indexOf("Kumar") && index < nameText.indexOf("Kumar") + 5
+                      ? "gradient-text"
+                      : ""
+                  }`}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </div>
           </h1>
 
           {/* Subtitle with typing effect */}
@@ -92,7 +94,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto"
+            className="text-base sm:text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto px-4"
           >
             Crafting elegant solutions at the intersection of{" "}
             <span className="text-primary">hardware</span> and{" "}
@@ -104,7 +106,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.2 }}
-            className="flex flex-wrap justify-center gap-4 mb-12"
+            className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12 px-4"
           >
             <motion.a
               href="#projects"
@@ -112,7 +114,7 @@ export const HeroSection = () => {
                 e.preventDefault();
                 document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg 
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground font-semibold rounded-lg text-sm sm:text-base
                          shadow-lg hover:shadow-primary/25 transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
@@ -125,7 +127,7 @@ export const HeroSection = () => {
                 e.preventDefault();
                 document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="px-8 py-4 glass font-semibold rounded-lg border border-border/50
+              className="px-6 sm:px-8 py-3 sm:py-4 glass font-semibold rounded-lg border border-border/50 text-sm sm:text-base
                          hover:border-primary/50 transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}

@@ -35,7 +35,7 @@ const projects = [
 const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: number }) => {
   return (
     <motion.div
-      className={`glass p-8 rounded-2xl group relative overflow-hidden ${
+      className={`glass p-4 sm:p-6 md:p-8 rounded-2xl group relative overflow-hidden ${
         project.featured ? "md:col-span-2 lg:col-span-1" : ""
       }`}
       whileHover={{ y: -8 }}
@@ -105,12 +105,12 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
 
 export const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-32 relative">
-      <div className="container mx-auto px-6">
+    <section id="projects" className="py-16 sm:py-24 md:py-32 relative">
+      <div className="container mx-auto px-4 sm:px-6">
         <AnimatedSection>
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold uppercase tracking-widest">Portfolio</span>
-            <h2 className="text-4xl md:text-5xl font-display font-bold mt-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mt-4">
               Featured{" "}
               <span className="gradient-text">Projects</span>
             </h2>
@@ -120,7 +120,7 @@ export const ProjectsSection = () => {
           </div>
         </AnimatedSection>
 
-        <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {projects.map((project, index) => (
             <StaggerItem key={project.title}>
               <ProjectCard project={project} index={index} />

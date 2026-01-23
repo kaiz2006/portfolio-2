@@ -73,13 +73,13 @@ export const LeetCodeSection = () => {
   ] : [];
 
   return (
-    <section id="leetcode" className="py-32 relative">
-      <div className="container mx-auto px-6">
+    <section id="leetcode" className="py-16 sm:py-24 md:py-32 relative">
+      <div className="container mx-auto px-4 sm:px-6">
         <AnimatedSection className="text-center mb-16">
           <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
             Competitive Programming
           </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6">
             LeetCode <span className="gradient-text">Stats</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -108,7 +108,7 @@ export const LeetCodeSection = () => {
             {/* Main Stats Card */}
             <StaggerItem>
               <motion.div
-                className="glass-strong rounded-3xl p-8 md:p-12 relative overflow-hidden"
+                className="glass-strong rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 relative overflow-hidden"
                 whileHover={{ scale: 1.01 }}
                 transition={{ duration: 0.3 }}
               >
@@ -117,31 +117,31 @@ export const LeetCodeSection = () => {
                 <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-accent/20 rounded-full blur-3xl" />
 
                 <div className="relative z-10">
-                  <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
-                    <div className="flex items-center gap-4">
-                      <div className="p-4 rounded-2xl bg-primary/10 border border-primary/20">
-                        <Trophy className="w-8 h-8 text-primary" />
+                  <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 md:mb-10">
+                    <div className="flex items-center gap-3 sm:gap-4">
+                      <div className="p-3 sm:p-4 rounded-2xl bg-primary/10 border border-primary/20">
+                        <Trophy className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold">{LEETCODE_USERNAME}</h3>
-                        <p className="text-muted-foreground">LeetCode Profile</p>
+                        <h3 className="text-xl sm:text-2xl font-bold break-all">{LEETCODE_USERNAME}</h3>
+                        <p className="text-sm sm:text-base text-muted-foreground">LeetCode Profile</p>
                       </div>
                     </div>
                     <motion.a
                       href={`https://leetcode.com/u/${LEETCODE_USERNAME}/`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-6 py-3 rounded-full bg-primary/10 border border-primary/30 text-primary hover:bg-primary/20 transition-colors"
+                      className="flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-primary/10 border border-primary/30 text-primary hover:bg-primary/20 transition-colors text-sm sm:text-base"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
                       <span className="font-medium">View Profile</span>
-                      <ExternalLink size={18} />
+                      <ExternalLink size={16} className="sm:w-[18px] sm:h-[18px]" />
                     </motion.a>
                   </div>
 
                   {/* Stats Grid */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8 md:mb-10">
                     <StatCard
                       icon={<Target className="w-6 h-6" />}
                       value={stats.totalSolved}
@@ -169,7 +169,7 @@ export const LeetCodeSection = () => {
                   </div>
 
                   {/* Difficulty Breakdown */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
                     {difficultyCards.map((card, index) => (
                       <motion.div
                         key={card.label}
@@ -177,13 +177,13 @@ export const LeetCodeSection = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className={`${card.bgColor} ${card.borderColor} border rounded-2xl p-6`}
+                        className={`${card.bgColor} ${card.borderColor} border rounded-2xl p-4 sm:p-6`}
                       >
                         <div className="flex justify-between items-center mb-4">
-                          <span className="text-lg font-semibold">{card.label}</span>
-                          <span className="text-2xl font-bold">
+                          <span className="text-base sm:text-lg font-semibold">{card.label}</span>
+                          <span className="text-xl sm:text-2xl font-bold">
                             {card.solved}
-                            <span className="text-sm text-muted-foreground font-normal">/{card.total}</span>
+                            <span className="text-xs sm:text-sm text-muted-foreground font-normal">/{card.total}</span>
                           </span>
                         </div>
                         <div className="h-3 bg-background/50 rounded-full overflow-hidden">
@@ -223,12 +223,12 @@ const StatCard = ({
   color: string;
 }) => (
   <motion.div
-    className="glass rounded-2xl p-6 text-center"
+    className="glass rounded-2xl p-4 sm:p-6 text-center"
     whileHover={{ scale: 1.05, y: -5 }}
     transition={{ duration: 0.2 }}
   >
-    <div className={`${color} flex justify-center mb-3`}>{icon}</div>
-    <div className="text-2xl md:text-3xl font-bold mb-1">{value}</div>
-    <div className="text-sm text-muted-foreground">{label}</div>
+    <div className={`${color} flex justify-center mb-2 sm:mb-3`}>{icon}</div>
+    <div className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 break-words">{value}</div>
+    <div className="text-xs sm:text-sm text-muted-foreground">{label}</div>
   </motion.div>
 );

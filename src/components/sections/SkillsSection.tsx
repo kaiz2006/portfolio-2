@@ -57,7 +57,7 @@ const SkillBar = ({ name, level }: { name: string; level: number }) => {
 const SkillCard = ({ category }: { category: typeof skillCategories[0] }) => {
   return (
     <motion.div
-      className="glass p-6 rounded-2xl h-full"
+      className="glass p-4 sm:p-6 rounded-2xl h-full"
       whileHover={{ 
         y: -5, 
         boxShadow: "0 20px 40px -20px hsl(var(--primary) / 0.3)",
@@ -76,15 +76,15 @@ const SkillCard = ({ category }: { category: typeof skillCategories[0] }) => {
 
 export const SkillsSection = () => {
   return (
-    <section id="skills" className="py-32 relative">
+    <section id="skills" className="py-16 sm:py-24 md:py-32 relative">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[80px] pointer-events-none" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <AnimatedSection>
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold uppercase tracking-widest">Skills</span>
-            <h2 className="text-4xl md:text-5xl font-display font-bold mt-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mt-4">
               Technical{" "}
               <span className="gradient-text">Expertise</span>
             </h2>
@@ -94,7 +94,7 @@ export const SkillsSection = () => {
           </div>
         </AnimatedSection>
 
-        <StaggerContainer className="grid md:grid-cols-2 gap-6">
+        <StaggerContainer className="grid md:grid-cols-2 gap-4 sm:gap-6">
           {skillCategories.map((category) => (
             <StaggerItem key={category.title}>
               <SkillCard category={category} />

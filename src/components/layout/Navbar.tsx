@@ -56,7 +56,7 @@ export const Navbar = () => {
           isScrolled ? "glass-strong py-4" : "py-6"
         }`}
       >
-        <div className="container mx-auto px-6 flex items-center justify-between">
+        <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
           <motion.a
             href="#home"
             onClick={(e) => {
@@ -122,7 +122,7 @@ export const Navbar = () => {
           >
             <div className="absolute inset-0 bg-background/95 backdrop-blur-xl" onClick={() => setIsMobileMenuOpen(false)} />
             <motion.div
-              className="relative container mx-auto px-6"
+              className="relative container mx-auto px-4 sm:px-6"
               initial="hidden"
               animate="visible"
               variants={{

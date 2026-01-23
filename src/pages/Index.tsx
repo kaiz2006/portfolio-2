@@ -11,11 +11,11 @@ import { ContactSection } from "@/components/sections/ContactSection";
 
 const Index = () => {
   return (
-    <div className="relative grain">
+    <div className="relative grain overflow-x-hidden">
       <CustomCursor />
       <Navbar />
       
-      <main>
+      <main className="overflow-x-hidden">
         <HeroSection />
         <AboutSection />
         <SkillsSection />

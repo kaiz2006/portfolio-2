@@ -34,7 +34,7 @@ export const Footer = () => {
         transition={{ duration: 1 }}
       />
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo */}
           <motion.a

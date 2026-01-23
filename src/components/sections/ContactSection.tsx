@@ -39,16 +39,16 @@ export const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-32 relative">
+    <section id="contact" className="py-16 sm:py-24 md:py-32 relative">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[80px]" />
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-secondary/10 rounded-full blur-[80px]" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <AnimatedSection>
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold uppercase tracking-widest">Contact</span>
-            <h2 className="text-4xl md:text-5xl font-display font-bold mt-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mt-4">
               Let's Work{" "}
               <span className="gradient-text">Together</span>
             </h2>
@@ -58,15 +58,15 @@ export const ContactSection = () => {
           </div>
         </AnimatedSection>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 max-w-5xl mx-auto">
           {/* Contact Form */}
           <SlideInLeft>
-            <form onSubmit={handleSubmit} className="glass p-8 rounded-2xl space-y-6">
+            <form onSubmit={handleSubmit} className="glass p-4 sm:p-6 md:p-8 rounded-2xl space-y-6">
               <div className="space-y-4">
                 {/* Name Input */}
                 <div className="relative">
                   <motion.label
-                    className={`absolute left-4 transition-all duration-300 pointer-events-none ${
+                    className={`absolute left-3 sm:left-4 transition-all duration-300 pointer-events-none ${
                       focused === "name" || formState.name
                         ? "top-2 text-xs text-primary"
                         : "top-4 text-muted-foreground"
@@ -80,7 +80,7 @@ export const ContactSection = () => {
                     onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                     onFocus={() => setFocused("name")}
                     onBlur={() => setFocused(null)}
-                    className="w-full pt-6 pb-2 px-4 bg-muted/30 border border-border rounded-lg 
+                    className="w-full pt-6 pb-2 px-3 sm:px-4 bg-muted/30 border border-border rounded-lg text-sm sm:text-base
                               focus:border-primary focus:outline-none transition-colors"
                     required
                   />
@@ -89,7 +89,7 @@ export const ContactSection = () => {
                 {/* Email Input */}
                 <div className="relative">
                   <motion.label
-                    className={`absolute left-4 transition-all duration-300 pointer-events-none ${
+                    className={`absolute left-3 sm:left-4 transition-all duration-300 pointer-events-none ${
                       focused === "email" || formState.email
                         ? "top-2 text-xs text-primary"
                         : "top-4 text-muted-foreground"
@@ -103,7 +103,7 @@ export const ContactSection = () => {
                     onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                     onFocus={() => setFocused("email")}
                     onBlur={() => setFocused(null)}
-                    className="w-full pt-6 pb-2 px-4 bg-muted/30 border border-border rounded-lg 
+                    className="w-full pt-6 pb-2 px-3 sm:px-4 bg-muted/30 border border-border rounded-lg text-sm sm:text-base
                               focus:border-primary focus:outline-none transition-colors"
                     required
                   />
@@ -112,7 +112,7 @@ export const ContactSection = () => {
                 {/* Message Input */}
                 <div className="relative">
                   <motion.label
-                    className={`absolute left-4 transition-all duration-300 pointer-events-none ${
+                    className={`absolute left-3 sm:left-4 transition-all duration-300 pointer-events-none ${
                       focused === "message" || formState.message
                         ? "top-2 text-xs text-primary"
                         : "top-4 text-muted-foreground"
@@ -126,7 +126,7 @@ export const ContactSection = () => {
                     onFocus={() => setFocused("message")}
                     onBlur={() => setFocused(null)}
                     rows={5}
-                    className="w-full pt-6 pb-2 px-4 bg-muted/30 border border-border rounded-lg 
+                    className="w-full pt-6 pb-2 px-3 sm:px-4 bg-muted/30 border border-border rounded-lg text-sm sm:text-base
                               focus:border-primary focus:outline-none transition-colors resize-none"
                     required
                   />
@@ -135,13 +135,13 @@ export const ContactSection = () => {
 
               <motion.button
                 type="submit"
-                className="w-full py-4 bg-primary text-primary-foreground font-semibold rounded-lg
+                className="w-full py-3 sm:py-4 bg-primary text-primary-foreground font-semibold rounded-lg text-sm sm:text-base
                            flex items-center justify-center gap-2 shadow-lg hover:shadow-primary/25 
                            transition-all duration-300"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Send size={18} />
+                <Send size={16} className="sm:w-[18px] sm:h-[18px]" />
                 Send Message
               </motion.button>
             </form>
@@ -151,7 +151,7 @@ export const ContactSection = () => {
           <SlideInRight className="flex flex-col justify-center">
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-display font-semibold mb-4">Get in Touch</h3>
+                <h3 className="text-xl sm:text-2xl font-display font-semibold mb-4">Get in Touch</h3>
                 <p className="text-muted-foreground">
                   I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
                 </p>

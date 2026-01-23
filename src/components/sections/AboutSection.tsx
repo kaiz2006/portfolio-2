@@ -45,23 +45,23 @@ const CountUp = ({ end, suffix = "" }: { end: number; suffix?: string }) => {
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-32 relative">
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-16 sm:py-24 md:py-32 relative">
+      <div className="container mx-auto px-4 sm:px-6">
         <AnimatedSection>
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold uppercase tracking-widest">About Me</span>
-            <h2 className="text-4xl md:text-5xl font-display font-bold mt-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mt-4">
               Passionate About{" "}
               <span className="gradient-text">Innovation</span>
             </h2>
           </div>
         </AnimatedSection>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
           {/* Image / Visual Side */}
           <SlideInLeft>
-            <div className="relative">
-              <div className="aspect-square rounded-2xl glass p-8 relative overflow-hidden">
+              <div className="relative">
+              <div className="aspect-square rounded-2xl glass p-4 sm:p-6 md:p-8 relative overflow-hidden">
                 {/* Decorative Grid */}
                 <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 gap-2 p-8 opacity-20">
                   {Array.from({ length: 36 }).map((_, i) => (
@@ -106,12 +106,12 @@ export const AboutSection = () => {
 
               {/* Floating Elements */}
               <motion.div
-                className="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-primary/20 blur-xl"
+                className="absolute -top-2 sm:-top-4 -right-2 sm:-right-4 w-12 h-12 sm:w-20 sm:h-20 rounded-full bg-primary/20 blur-xl"
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 4, repeat: Infinity }}
               />
               <motion.div
-                className="absolute -bottom-4 -left-4 w-16 h-16 rounded-full bg-secondary/20 blur-xl"
+                className="absolute -bottom-2 sm:-bottom-4 -left-2 sm:-left-4 w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-secondary/20 blur-xl"
                 animate={{ scale: [1, 1.3, 1] }}
                 transition={{ duration: 5, repeat: Infinity, delay: 1 }}
               />
@@ -133,19 +133,19 @@ export const AboutSection = () => {
               </p>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-2 gap-4 pt-8">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-6 sm:pt-8">
                 {stats.map((stat, index) => (
                   <motion.div
                     key={stat.label}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="glass p-6 rounded-xl text-center"
+                    className="glass p-4 sm:p-6 rounded-xl text-center"
                   >
-                    <div className="text-3xl md:text-4xl font-display font-bold gradient-text">
+                    <div className="text-2xl sm:text-3xl md:text-4xl font-display font-bold gradient-text">
                       <CountUp end={stat.value} suffix={stat.suffix} />
                     </div>
-                    <div className="text-sm text-muted-foreground mt-2">{stat.label}</div>
+                    <div className="text-xs sm:text-sm text-muted-foreground mt-2">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
