@@ -77,7 +77,7 @@ export const HeroSection = () => {
                     delay: 0.3 + index * 0.03,
                     ease: [0.25, 0.1, 0.25, 1],
                   }}
-                  className={`inline-block ${char === " " ? "w-2 sm:w-3 md:w-4" : ""}`}
+                  className={`inline-block ${char === " " ? "w-1 sm:w-2" : ""}`}
                 >
                   {char}
                 </motion.span>
