@@ -1,7 +1,9 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { CustomCursor } from "@/components/CustomCursor";
+import SplashCursor from "@/components/SplashCursor";
+import BackgroundFloatingLines from "@/components/BackgroundFloatingLines";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { GallerySection } from "@/components/sections/GallerySection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
 import { LeetCodeSection } from "@/components/sections/LeetCodeSection";
@@ -12,11 +14,13 @@ import { ContactSection } from "@/components/sections/ContactSection";
 const Index = () => {
   return (
     <div className="relative grain overflow-x-hidden">
-      <CustomCursor />
+      <BackgroundFloatingLines />
+      <SplashCursor />
       <Navbar />
-      
+
       <main className="overflow-x-hidden">
         <HeroSection />
+        <GallerySection />
         <AboutSection />
         <SkillsSection />
         <LeetCodeSection />

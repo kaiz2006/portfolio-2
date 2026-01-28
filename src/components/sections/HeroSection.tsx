@@ -3,7 +3,7 @@ import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
 
 export const HeroSection = () => {
   const nameText = "Aaryan Kumar Thakur";
-  
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background Blobs */}
@@ -65,7 +65,7 @@ export const HeroSection = () => {
           </motion.div>
 
           {/* Animated Name */}
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6 overflow-hidden">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 overflow-hidden text-white">
             <div className="flex flex-wrap justify-center gap-x-1 md:gap-x-2">
               {nameText.split("").map((char, index) => (
                 <motion.span
@@ -77,11 +77,7 @@ export const HeroSection = () => {
                     delay: 0.3 + index * 0.03,
                     ease: [0.25, 0.1, 0.25, 1],
                   }}
-                  className={`inline-block ${char === " " ? "w-2 sm:w-3 md:w-4" : ""} ${
-                    index >= nameText.indexOf("Kumar") && index < nameText.indexOf("Kumar") + 5
-                      ? "gradient-text"
-                      : ""
-                  }`}
+                  className={`inline-block ${char === " " ? "w-2 sm:w-3 md:w-4" : ""}`}
                 >
                   {char}
                 </motion.span>
