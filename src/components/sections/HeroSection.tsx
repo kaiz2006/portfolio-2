@@ -66,7 +66,7 @@ export const HeroSection = () => {
 
           {/* Animated Name */}
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 overflow-hidden text-white">
-            <div className="flex flex-wrap justify-center gap-x-1 md:gap-x-2">
+            <div className="flex flex-wrap justify-center ">
               {nameText.split("").map((char, index) => (
                 <motion.span
                   key={index}
