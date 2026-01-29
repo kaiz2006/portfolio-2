@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { ShareButtonDemo } from "@/components/ShareButtonDemo";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -52,9 +53,8 @@ export const Navbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? "glass-strong py-4" : "py-6"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "glass-strong py-4" : "py-6"
+          }`}
       >
         <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
           <motion.a
@@ -80,11 +80,10 @@ export const Navbar = () => {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className={`relative text-sm font-medium transition-colors ${
-                  activeSection === link.href.replace("#", "")
+                className={`relative text-sm font-medium transition-colors ${activeSection === link.href.replace("#", "")
                     ? "text-primary"
                     : "text-muted-foreground hover:text-foreground"
-                }`}
+                  }`}
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
               >
@@ -97,6 +96,9 @@ export const Navbar = () => {
                 )}
               </motion.a>
             ))}
+
+            {/* Share Button in navbar */}
+            <ShareButtonDemo size="sm" />
           </div>
 
           {/* Mobile Menu Button */}
@@ -142,11 +144,10 @@ export const Navbar = () => {
                     hidden: { opacity: 0, x: -20 },
                     visible: { opacity: 1, x: 0 },
                   }}
-                  className={`block py-4 text-2xl font-display font-semibold border-b border-border/20 ${
-                    activeSection === link.href.replace("#", "")
+                  className={`block py-4 text-2xl font-display font-semibold border-b border-border/20 ${activeSection === link.href.replace("#", "")
                       ? "gradient-text"
                       : "text-foreground"
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </motion.a>

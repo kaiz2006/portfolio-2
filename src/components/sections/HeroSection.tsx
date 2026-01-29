@@ -1,54 +1,15 @@
 import { motion } from "framer-motion";
 import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
+import Orb from "@/components/Orb";
 
 export const HeroSection = () => {
   const nameText = "Aaryan Kumar Thakur";
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background Blobs */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute -top-20 sm:-top-40 -left-20 sm:-left-40 w-48 h-48 sm:w-96 sm:h-96 rounded-full bg-primary/20 blur-[80px]"
-          animate={{
-            x: [0, 50, 0],
-            y: [0, 30, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute top-1/3 -right-20 sm:-right-40 w-40 h-40 sm:w-80 sm:h-80 rounded-full bg-secondary/20 blur-[80px]"
-          animate={{
-            x: [0, -30, 0],
-            y: [0, 50, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2,
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 left-1/3 w-36 h-36 sm:w-72 sm:h-72 rounded-full bg-accent/15 blur-[80px]"
-          animate={{
-            x: [0, 40, 0],
-            y: [0, -30, 0],
-            scale: [1, 1.15, 1],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1,
-          }}
-        />
+      {/* Orb Background */}
+      <div className="absolute inset-0">
+        <Orb backgroundColor="#000000" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -66,7 +27,7 @@ export const HeroSection = () => {
 
           {/* Animated Name */}
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 overflow-hidden text-white">
-            <div className="flex flex-wrap justify-center ">
+            <div className="flex flex-wrap justify-center gap-x-0.5 md:gap-x-1">
               {nameText.split("").map((char, index) => (
                 <motion.span
                   key={index}

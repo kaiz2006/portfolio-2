@@ -66,11 +66,10 @@ export const ContactSection = () => {
                 {/* Name Input */}
                 <div className="relative">
                   <motion.label
-                    className={`absolute left-3 sm:left-4 transition-all duration-300 pointer-events-none ${
-                      focused === "name" || formState.name
-                        ? "top-2 text-xs text-primary"
-                        : "top-4 text-muted-foreground"
-                    }`}
+                    className={`absolute left-3 sm:left-4 transition-all duration-300 pointer-events-none ${focused === "name" || formState.name
+                      ? "top-2 text-xs text-primary"
+                      : "top-4 text-muted-foreground"
+                      }`}
                   >
                     Your Name
                   </motion.label>
@@ -89,11 +88,10 @@ export const ContactSection = () => {
                 {/* Email Input */}
                 <div className="relative">
                   <motion.label
-                    className={`absolute left-3 sm:left-4 transition-all duration-300 pointer-events-none ${
-                      focused === "email" || formState.email
-                        ? "top-2 text-xs text-primary"
-                        : "top-4 text-muted-foreground"
-                    }`}
+                    className={`absolute left-3 sm:left-4 transition-all duration-300 pointer-events-none ${focused === "email" || formState.email
+                      ? "top-2 text-xs text-primary"
+                      : "top-4 text-muted-foreground"
+                      }`}
                   >
                     Email Address
                   </motion.label>
@@ -112,11 +110,10 @@ export const ContactSection = () => {
                 {/* Message Input */}
                 <div className="relative">
                   <motion.label
-                    className={`absolute left-3 sm:left-4 transition-all duration-300 pointer-events-none ${
-                      focused === "message" || formState.message
-                        ? "top-2 text-xs text-primary"
-                        : "top-4 text-muted-foreground"
-                    }`}
+                    className={`absolute left-3 sm:left-4 transition-all duration-300 pointer-events-none ${focused === "message" || formState.message
+                      ? "top-2 text-xs text-primary"
+                      : "top-4 text-muted-foreground"
+                      }`}
                   >
                     Your Message
                   </motion.label>

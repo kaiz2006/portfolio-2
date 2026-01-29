@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "../animations/AnimatedSection";
 import { ExternalLink, Github, Folder } from "lucide-react";
+import { CodeDemo } from "@/components/CodeDemo";
 
 const projects = [
   {
@@ -8,7 +9,7 @@ const projects = [
     description:
       "Computer vision based system that tracks hand landmarks in real time and allows controlling mouse actions using hand gestures. Built using OpenCV and MediaPipe with Python, enabling touch-free interaction.",
     tech: ["Python", "OpenCV", "MediaPipe", "Computer Vision"],
-    github: "https://github.com/kaiz2006/Repo-1/blob/main/handmapper.py", 
+    github: "https://github.com/kaiz2006/Repo-1/blob/main/handmapper.py",
     live: "#",
     featured: true,
   },
@@ -28,16 +29,15 @@ const projects = [
     github: "#",
     featured: false,
   },
-  
+
 ];
 
 
 const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: number }) => {
   return (
     <motion.div
-      className={`glass p-4 sm:p-6 md:p-8 rounded-2xl group relative overflow-hidden ${
-        project.featured ? "md:col-span-2 lg:col-span-1" : ""
-      }`}
+      className={`glass p-4 sm:p-6 md:p-8 rounded-2xl group relative overflow-hidden ${project.featured ? "md:col-span-2 lg:col-span-1" : ""
+        }`}
       whileHover={{ y: -8 }}
       transition={{ duration: 0.3 }}
     >
@@ -120,30 +120,47 @@ export const ProjectsSection = () => {
           </div>
         </AnimatedSection>
 
-        <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {projects.map((project, index) => (
-            <StaggerItem key={project.title}>
-              <ProjectCard project={project} index={index} />
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+        {/* Two-column layout: Projects on left, CodeDemo on right */}
+        <div className="grid lg:grid-cols-[1fr,420px] gap-8 lg:gap-12 items-start">
+          {/* Projects Grid */}
+          <div>
+            <StaggerContainer className="grid md:grid-cols-2 gap-4 sm:gap-6">
+              {projects.map((project, index) => (
+                <StaggerItem key={project.title + index}>
+                  <ProjectCard project={project} index={index} />
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
 
-        <AnimatedSection delay={0.4}>
-          <div className="text-center mt-12">
-            <motion.a
-              href="https://github.com/kaiz2006"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 glass rounded-full text-sm font-medium
-                         hover:border-primary/50 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Github size={18} />
-              View More on GitHub
-            </motion.a>
+            <AnimatedSection delay={0.4}>
+              <div className="text-center mt-12">
+                <motion.a
+                  href="https://github.com/kaiz2006"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 glass rounded-full text-sm font-medium
+                             hover:border-primary/50 transition-all duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Github size={18} />
+                  View More on GitHub
+                </motion.a>
+              </div>
+            </AnimatedSection>
           </div>
-        </AnimatedSection>
+
+          {/* CodeDemo - Sticky on the right */}
+          <AnimatedSection delay={0.3} className="hidden lg:block">
+            <div className="sticky top-24">
+              <div className="mb-4">
+                <span className="text-xs font-semibold uppercase tracking-widest text-primary">Code Preview</span>
+                <p className="text-muted-foreground text-sm mt-1">Clean, maintainable code is my priority</p>
+              </div>
+              <CodeDemo duration={5} delay={1} writing={true} cursor={true} />
+            </div>
+          </AnimatedSection>
+        </div>
       </div>
     </section>
   );
