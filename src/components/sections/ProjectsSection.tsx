@@ -14,11 +14,11 @@ const projects = [
     featured: true,
   },
   {
-    title: "Big Project Incoming 🚀",
+    title: "Web Scraper using Pandas",
     description:
-      "Currently working on a large-scale backend and system design project focused on real-world scalability, database optimization, and API architecture. Stay tuned for updates.",
-    tech: ["FastAPI", "MySQL", "System Design"],
-    github: "#",
+      "A Python-based web scraper that extracts tabular data from web pages, cleans it with Pandas, and exports it to CSV for further analysis. Easily adaptable to different sites and datasets.",
+    tech: ["Python", "Pandas", "Requests", "Web Scraping"],
+    github: "https://github.com/kaiz2006/Web-Scraper-using-Pandas",
     featured: false,
   },
   {
