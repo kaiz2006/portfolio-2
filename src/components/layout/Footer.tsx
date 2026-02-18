@@ -7,6 +7,7 @@ const footerLinks = [
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
+  { href: "/resume.pdf", label: "Resume" },
 ];
 
 const socialLinks = [
@@ -56,9 +57,13 @@ export const Footer = () => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(link.href);
+                  if (link.href.startsWith("#")) {
+                    e.preventDefault();
+                    scrollToSection(link.href);
+                  }
                 }}
+                target={link.href.startsWith("#") ? undefined : "_blank"}
+                rel={link.href.startsWith("#") ? undefined : "noopener noreferrer"}
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 whileHover={{ y: -2 }}
               >

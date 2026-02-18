@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
+import { ChevronDown, Github, Linkedin, Mail, FileText } from "lucide-react";
 import Orb from "@/components/Orb";
 
 export const HeroSection = () => {
@@ -104,6 +104,7 @@ export const HeroSection = () => {
               { icon: Github, href: "https://github.com/kaiz2006", label: "GitHub" },
               { icon: Linkedin, href: "https://www.linkedin.com/in/aaryan-kumar-thakur-9a4783206/", label: "LinkedIn" },
               { icon: Mail, href: "mailto:aaryankt.work@gmail.com", label: "Email" },
+              { icon: FileText, href: "/resume.pdf", label: "Resume" },
             ].map(({ icon: Icon, href, label }) => (
               <motion.a
                 key={label}
