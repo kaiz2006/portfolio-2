@@ -22,11 +22,11 @@ const projects = [
     featured: false,
   },
   {
-    title: "Big Project Incoming 🚀",
+    title: "Stock Price Prediction using KNN",
     description:
-      "Upcoming full-stack application with advanced authentication, role-based dashboards, and cloud deployment pipeline.",
-    tech: ["React", "TypeScript", "Cloud"],
-    github: "#",
+      "A basic machine learning project that predicts stock closing prices using the K-Nearest Neighbors (KNN) algorithm. Includes preprocessing, feature scaling, model training, evaluation, and actual vs predicted visualization.",
+    tech: ["Python", "NumPy", "Pandas", "Scikit-learn", "Matplotlib", "Jupyter Notebook"],
+    github: "https://github.com/kaiz2006/Stock-Price-Prediction",
     featured: false,
   },
 

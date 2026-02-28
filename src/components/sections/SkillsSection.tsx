@@ -32,6 +32,18 @@ const skillCategories = [
       { name: "Linux", level: 80 },
     ],
   },
+  {
+    title: "Data Science & ML",
+    skills: [
+      { name: "NumPy", level: 85 },
+      { name: "Pandas", level: 90 },
+      { name: "Scikit-learn", level: 85 },
+      { name: "TensorFlow", level: 75 },
+      { name: "PyTorch", level: 70 },
+      { name: "Matplotlib", level: 80 },
+      { name: "Pydantic", level: 80 },
+    ],
+  },
 ];
 
 const SkillBar = ({ name, level }: { name: string; level: number }) => {
