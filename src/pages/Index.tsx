@@ -1,8 +1,8 @@
 import { lazy, Suspense } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import SplashCursor from "@/components/SplashCursor";
-import BackgroundFloatingLines from "@/components/BackgroundFloatingLines";
+import PixelBlast from "@/components/BackgroundFloatingLines";
+import { ConnectOrb } from "@/components/ConnectOrb";
 import { HeroSection } from "@/components/sections/HeroSection";
 import LazySection from "@/components/LazySection";
 
@@ -21,9 +21,6 @@ const ProjectsSection = lazy(() =>
 );
 const ExperienceSection = lazy(() =>
   import("@/components/sections/ExperienceSection").then(m => ({ default: m.ExperienceSection }))
-);
-const ContactSection = lazy(() =>
-  import("@/components/sections/ContactSection").then(m => ({ default: m.ContactSection }))
 );
 
 // Loading fallback component
@@ -44,9 +41,18 @@ const SectionFallback = () => (
 
 const Index = () => {
   return (
-    <div className="relative grain overflow-x-hidden">
-      <BackgroundFloatingLines />
-      <SplashCursor />
+    <div className="relative grain min-h-screen">
+      <div className="fixed inset-0 pointer-events-none -z-10">
+        <PixelBlast 
+          color="#0f172a" /* Duller, darker blue-gray */
+          liquid={true}
+          transparent={false}
+          speed={0.8}
+          pixelSize={5}
+          patternScale={2.5}
+          liquidStrength={0.2}
+        />
+      </div>
       <Navbar />
 
       <main className="overflow-x-hidden">
@@ -84,11 +90,7 @@ const Index = () => {
           </Suspense>
         </LazySection>
 
-        <LazySection>
-          <Suspense fallback={<SectionFallback />}>
-            <ContactSection />
-          </Suspense>
-        </LazySection>
+        <ConnectOrb />
       </main>
 
       <Footer />

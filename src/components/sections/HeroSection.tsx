@@ -1,17 +1,10 @@
 import { motion } from "framer-motion";
 import { ChevronDown, Github, Linkedin, Mail, FileText } from "lucide-react";
-import Orb from "@/components/Orb";
-
 export const HeroSection = () => {
   const nameText = "Aaryan Kumar Thakur";
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Orb Background */}
-      <div className="absolute inset-0">
-        <Orb backgroundColor="#000000" />
-      </div>
-
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Role Tag */}
@@ -123,31 +116,6 @@ export const HeroSection = () => {
           </motion.div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 1.6 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-      >
-        <motion.a
-          href="#about"
-          onClick={(e) => {
-            e.preventDefault();
-            document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" });
-          }}
-          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-        >
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          >
-            <ChevronDown size={24} />
-          </motion.div>
-        </motion.a>
-      </motion.div>
     </section>
   );
 };

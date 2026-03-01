@@ -10,7 +10,6 @@ const navLinks = [
   { href: "#leetcode", label: "LeetCode" },
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
-  { href: "#contact", label: "Contact" },
   { href: "/resume.pdf", label: "Resume" },
 ];
 

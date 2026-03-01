@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "../animations/AnimatedSection";
 import { ExternalLink, Github, Folder } from "lucide-react";
 import { CodeDemo } from "@/components/CodeDemo";
+import ElectricBorder from "../ElectricBorder";
 
 const projects = [
   {
@@ -43,69 +44,77 @@ const projects = [
 const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: number }) => {
   return (
     <motion.div
-      className={`glass p-4 sm:p-6 md:p-8 rounded-2xl group relative overflow-hidden ${project.featured ? "md:col-span-2 lg:col-span-1" : ""
+      className={`group relative h-full ${project.featured ? "md:col-span-2 lg:col-span-1" : ""
         }`}
       whileHover={{ y: -8 }}
       transition={{ duration: 0.3 }}
     >
-      {/* Gradient overlay on hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <ElectricBorder
+        color="#7df9ff"
+        speed={1}
+        chaos={0.12}
+        borderRadius={16}
+        className="glass p-4 sm:p-6 md:p-8 h-full"
+      >
+        {/* Gradient overlay on hover */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
 
-      <div className="relative z-10">
-        <div className="flex items-start justify-between mb-6">
-          <motion.div
-            className="p-3 rounded-lg bg-primary/10"
-            whileHover={{ rotate: 10 }}
-          >
-            <Folder className="w-6 h-6 text-primary" />
-          </motion.div>
-          <div className="flex gap-3">
-            <motion.a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.95 }}
+        <div className="relative z-10">
+          <div className="flex items-start justify-between mb-6">
+            <motion.div
+              className="p-3 rounded-lg bg-primary/10"
+              whileHover={{ rotate: 10 }}
             >
-              <Github size={20} />
-            </motion.a>
-            {project.live && (
+              <Folder className="w-6 h-6 text-primary" />
+            </motion.div>
+            <div className="flex gap-3">
               <motion.a
-                href={project.live}
+                href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <ExternalLink size={20} />
+                <Github size={20} />
               </motion.a>
-            )}
+              {project.live && (
+                <motion.a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <ExternalLink size={20} />
+                </motion.a>
+              )}
+            </div>
+          </div>
+
+          <h3 className="text-xl font-display font-semibold mb-3 group-hover:gradient-text transition-all duration-300">
+            {project.title}
+          </h3>
+          <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+            {project.description}
+          </p>
+
+          <div className="flex flex-wrap gap-2">
+            {project.tech.map((tech) => (
+              <span
+                key={tech}
+                className="px-3 py-1 text-xs font-medium bg-muted/50 text-muted-foreground rounded-full"
+              >
+                {tech}
+              </span>
+            ))}
           </div>
         </div>
 
-        <h3 className="text-xl font-display font-semibold mb-3 group-hover:gradient-text transition-all duration-300">
-          {project.title}
-        </h3>
-        <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
-          {project.description}
-        </p>
-
-        <div className="flex flex-wrap gap-2">
-          {project.tech.map((tech) => (
-            <span
-              key={tech}
-              className="px-3 py-1 text-xs font-medium bg-muted/50 text-muted-foreground rounded-full"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* Glow effect */}
-      <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-primary/20 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        {/* Glow effect */}
+        <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-primary/20 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      </ElectricBorder>
     </motion.div>
   );
 };
