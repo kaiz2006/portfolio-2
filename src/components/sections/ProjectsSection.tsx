@@ -29,7 +29,14 @@ const projects = [
     github: "https://github.com/kaiz2006/Stock-Price-Prediction",
     featured: false,
   },
-
+  {
+    title: "Diabetes Prediction",
+    description:
+      "Machine learning model that predicts diabetes risk from medical data. Includes data preprocessing, EDA, model training, evaluation, and visualizations to support early detection and informed healthcare decisions.",
+    tech: ["Python", "Jupyter Notebook", "NumPy", "Pandas", "Scikit-learn", "Matplotlib", "Seaborn"],
+    github: "https://github.com/kaiz2006/Diabetes-Prediction",
+    featured: false,
+  },
 ];
 
 
