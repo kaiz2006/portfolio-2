@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,17 +7,13 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 import TargetCursor from "@/components/ui/TargetCursor";
-import { LoadingScreen } from "@/components/ui/LoadingScreen";
 
 const queryClient = new QueryClient();
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
         <Toaster />
         <Sonner />
         <TargetCursor 

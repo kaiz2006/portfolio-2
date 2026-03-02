@@ -18,15 +18,15 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
         className="fixed inset-0 z-[10000] flex flex-col items-center justify-center bg-black text-white"
       >
-        <div className="flex flex-col items-center gap-4 pr-4">
-          <div className="text-7xl md:text-9xl font-sans font-bold tabular-nums overflow-visible pr-6">
+        <div className="flex flex-col items-center gap-4">
+          <div className="text-7xl md:text-9xl font-light tabular-nums overflow-visible" style={{ fontFamily: '"Inter", system-ui, sans-serif', letterSpacing: '-0.04em' }}>
             <CountUp
               from={0}
               to={100}
               separator=","
               direction="up"
               duration={2}
-              className="gradient-text italic tracking-tighter inline-block pr-6"
+              className="text-white inline-block"
               startWhen={true}
               onEnd={() => {
                 // Add a small delay after reaching 100 before animating out
@@ -35,14 +35,6 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                   onComplete();
                 }, 500);
               }}
-            />
-          </div>
-          <div className="h-[2px] w-64 bg-muted/30 rounded-full overflow-hidden mt-8 ml-4">
-            <motion.div 
-              className="h-full bg-primary"
-              initial={{ width: "0%" }}
-              animate={{ width: "100%" }}
-              transition={{ duration: 2, ease: "linear" }}
             />
           </div>
         </div>
